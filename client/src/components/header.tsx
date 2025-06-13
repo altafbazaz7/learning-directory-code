@@ -14,13 +14,13 @@ export function Header() {
               </div>
               <div className="flex gap-[10px] items-center">
 
-                {/* <div >
+                <div >
                   <img src="https://media.licdn.com/dms/image/v2/D560BAQHgjlTwZQNjCg/company-logo_200_200/company-logo_200_200/0/1690456261755/habot_connect_logo?e=2147483647&v=beta&t=NFoFVj0bGAwHBLsm3eGBsGSJPH3XodiU_Us7XK-Ii40" style={{ height: "80px" }} />
 
-                </div> */}
+                </div>
                 <div>
 
-                  {/* <h1 className="text-xl font-bold text-slate-900">Habot Connect</h1> */}
+                  <h1 className="text-xl font-bold text-slate-900">Habot Connect</h1>
                   <p className="text-xs text-slate-500">Learning Support Directory</p>
                 </div>
               </div>
