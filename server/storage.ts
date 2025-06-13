@@ -159,7 +159,12 @@ export class MemStorage implements IStorage {
 
   async createProvider(insertProvider: InsertProvider): Promise<Provider> {
     const id = this.currentProviderId++;
-    const provider: Provider = { ...insertProvider, id };
+    const provider: Provider = { 
+      ...insertProvider, 
+      id,
+      available: insertProvider.available ?? true,
+      reviewCount: insertProvider.reviewCount ?? 0
+    };
     this.providers.set(id, provider);
     return provider;
   }

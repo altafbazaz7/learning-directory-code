@@ -18,8 +18,9 @@ export function SearchFilter({ onSearch, isLoading }: SearchFilterProps) {
   };
 
   const handleSpecializationChange = (value: string) => {
-    setSpecialization(value);
-    onSearch(searchQuery, value);
+    const filterValue = value === "all" ? "" : value;
+    setSpecialization(filterValue);
+    onSearch(searchQuery, filterValue);
   };
 
   return (
@@ -49,7 +50,7 @@ export function SearchFilter({ onSearch, isLoading }: SearchFilterProps) {
                 <SelectValue placeholder="All Specializations" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Specializations</SelectItem>
+                <SelectItem value="all">All Specializations</SelectItem>
                 <SelectItem value="dyslexia">Dyslexia Support</SelectItem>
                 <SelectItem value="adhd">ADHD Coaching</SelectItem>
                 <SelectItem value="autism">Autism Support</SelectItem>

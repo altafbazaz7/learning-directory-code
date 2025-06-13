@@ -12,8 +12,8 @@ export const providers = pgTable("providers", {
   longDescription: text("long_description").notNull(),
   contactEmail: text("contact_email").notNull(),
   phoneNumber: text("phone_number").notNull(),
-  available: boolean("available").default(true),
-  reviewCount: integer("review_count").default(0),
+  available: boolean("available").default(true).notNull(),
+  reviewCount: integer("review_count").default(0).notNull(),
 });
 
 export const insertProviderSchema = createInsertSchema(providers).omit({

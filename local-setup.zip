@@ -1,0 +1,74 @@
+# Learning Support Provider Directory - Local Setup Package
+
+## Quick Start
+
+1. **Create a new directory and navigate to it:**
+   ```bash
+   mkdir learning-support-directory
+   cd learning-support-directory
+   ```
+
+2. **Initialize package.json:**
+   ```bash
+   npm init -y
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   npm install express @tanstack/react-query wouter react react-dom @types/react @types/react-dom @types/node @types/express typescript tsx vite @vitejs/plugin-react tailwindcss autoprefixer postcss
+   ```
+
+4. **Install UI components:**
+   ```bash
+   npm install lucide-react class-variance-authority clsx tailwind-merge @radix-ui/react-slot @radix-ui/react-toast @radix-ui/react-tooltip @radix-ui/react-select @radix-ui/react-alert-dialog framer-motion
+   ```
+
+5. **Copy all the files from the attached code structure**
+
+6. **Run the application:**
+   ```bash
+   npm run dev
+   ```
+
+The application will be available at `http://localhost:5000`
+
+## File Structure to Create:
+
+```
+learning-support-directory/
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── tailwind.config.ts
+├── postcss.config.js
+├── components.json
+├── client/
+│   ├── index.html
+│   └── src/
+│       ├── main.tsx
+│       ├── App.tsx
+│       ├── index.css
+│       ├── lib/
+│       │   ├── utils.ts
+│       │   ├── api.ts
+│       │   └── queryClient.ts
+│       ├── data/
+│       │   └── providers.json
+│       ├── components/
+│       │   ├── header.tsx
+│       │   ├── star-rating.tsx
+│       │   ├── search-filter.tsx
+│       │   ├── provider-card.tsx
+│       │   └── ui/ (all shadcn components)
+│       └── pages/
+│           ├── providers.tsx
+│           ├── provider-detail.tsx
+│           └── not-found.tsx
+├── server/
+│   ├── index.ts
+│   ├── routes.ts
+│   ├── storage.ts
+│   └── vite.ts
+└── shared/
+    └── schema.ts
+```
