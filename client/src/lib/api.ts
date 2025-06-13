@@ -1,23 +1,22 @@
-import { Provider } from "@shared/schema";
+import { Provider } from "../../../shared/schema";
 import providersData from "../data/providers.json";
 
-// Simulate API delay
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export const api = {
   async getProviders(): Promise<Provider[]> {
-    await delay(800); // Simulate network delay
+    await delay(800); 
     return providersData as Provider[];
   },
 
   async getProvider(id: number): Promise<Provider | null> {
-    await delay(500); // Simulate network delay
+    await delay(500);
     const provider = providersData.find(p => p.id === id);
     return provider ? (provider as Provider) : null;
   },
 
   async searchProviders(query: string, specialization?: string): Promise<Provider[]> {
-    await delay(600); // Simulate network delay
+    await delay(600);
     let filtered = providersData as Provider[];
 
     if (query) {

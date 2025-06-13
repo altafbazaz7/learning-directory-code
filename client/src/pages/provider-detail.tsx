@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { useRoute, Link, useLocation } from "wouter";
-import { Header } from "@/components/header";
-import { StarRating } from "@/components/star-rating";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Header } from "../components/header";
+import { StarRating } from "../components/star-rating";
+import { Button } from "../components/ui/button";
+import { Skeleton } from "../components/ui/skeleton";
 import { 
   ArrowLeft, 
   MapPin, 
@@ -18,7 +18,7 @@ import {
   Calendar,
   AlertCircle
 } from "lucide-react";
-import { api } from "@/lib/api";
+import { api } from "../lib/api";
 
 export default function ProviderDetailPage() {
   const [match, params] = useRoute('/providers/:id');
@@ -153,19 +153,17 @@ export default function ProviderDetailPage() {
         </div>
 
         <div className="bg-white rounded-xl shadow-sm border border-slate-200">
-          {/* Header */}
           <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between">
             <h2 className="text-lg font-semibold text-slate-900">Provider Details</h2>
           </div>
 
-          {/* Content */}
           <div className="px-6 py-6">
-            {/* Provider Header */}
             <div className="flex items-start space-x-6 mb-8">
               <div className={`w-20 h-20 bg-gradient-to-br ${getGradientClass(provider.id)} rounded-xl flex items-center justify-center flex-shrink-0`}>
-                <span className="text-white font-bold text-2xl">
-                  {getInitials(provider.name)}
-                </span>
+                 <span className="text-white font-semibold text-lg">
+              {provider.avatarUrl ?
+                <img src={provider.avatarUrl} alt={`${provider.name}'s avatar`} className="w-full h-full rounded-lg object-cover" /> : null}
+            </span>
               </div>
               <div className="flex-1">
                 <h1 className="text-2xl font-bold text-slate-900 mb-2">{provider.name}</h1>
@@ -333,7 +331,6 @@ export default function ProviderDetailPage() {
               </div>
             </div>
 
-            {/* Contact Information */}
             <div className="bg-slate-50 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">Contact Information</h3>
               <div className="grid md:grid-cols-2 gap-4">

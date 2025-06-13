@@ -1,6 +1,6 @@
 import { GraduationCap, Menu } from "lucide-react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 
 export function Header() {
   return (
@@ -12,13 +12,22 @@ export function Header() {
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <GraduationCap className="text-white text-lg" />
               </div>
-              <div>
-                <h1 className="text-xl font-bold text-slate-900">Habot Connect</h1>
-                <p className="text-xs text-slate-500">Learning Support Directory</p>
+              <div className="flex gap-[10px] items-center">
+
+                <div >
+                  <img src="https://media.licdn.com/dms/image/v2/D560BAQHgjlTwZQNjCg/company-logo_200_200/company-logo_200_200/0/1690456261755/habot_connect_logo?e=2147483647&v=beta&t=NFoFVj0bGAwHBLsm3eGBsGSJPH3XodiU_Us7XK-Ii40" style={{ height: "80px" }} />
+
+                </div>
+                <div>
+
+                  <h1 className="text-xl font-bold text-slate-900">Habot Connect</h1>
+                  <p className="text-xs text-slate-500">Learning Support Directory</p>
+                </div>
               </div>
+
             </div>
           </Link>
-          
+
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="/" className="text-slate-600 hover:text-primary transition-colors">
               Home
@@ -33,7 +42,7 @@ export function Header() {
               Contact
             </a>
           </nav>
-          
+
           <Button variant="ghost" size="sm" className="md:hidden p-2 text-slate-600 hover:text-primary">
             <Menu className="text-lg" />
           </Button>

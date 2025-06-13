@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "wouter";
-import { Header } from "@/components/header";
-import { SearchFilter } from "@/components/search-filter";
-import { ProviderCard } from "@/components/provider-card";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Header } from "../components/header";
+import { SearchFilter } from "../components/search-filter";
+import { ProviderCard } from "../components/provider-card";
+import { Skeleton } from "../components/ui/skeleton";
+import { Button } from "../components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { AlertCircle, Search, RefreshCw } from "lucide-react";
-import { api } from "@/lib/api";
-import { Provider } from "@shared/schema";
+import { api } from "../lib/api";
+import { Provider } from "../../../shared/schema";
 
 export default function ProvidersPage() {
   const [, setLocation] = useLocation();
@@ -120,19 +119,40 @@ export default function ProvidersPage() {
             <p className="text-slate-600">
               {sortedProviders.length} providers found
             </p>
-            <div className="flex items-center space-x-4">
-              <span className="text-sm text-slate-500">Sort by:</span>
-              <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger className="w-32">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="rating">Rating</SelectItem>
-                  <SelectItem value="name">Name</SelectItem>
-                  <SelectItem value="location">Location</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+           <div className="flex items-center space-x-4 border border-slate-300 rounded-md p-2 bg-white shadow-sm">
+  <span className="text-sm text-slate-500">Sort by:</span>
+  <Select value={sortBy} onValueChange={setSortBy}>
+    <SelectTrigger
+      className="w-32 bg-white border border-slate-300 shadow-sm transition-all duration-200 focus:ring-2 focus:ring-primary focus:border-primary"
+      style={{ zIndex: 20 }}
+    >
+      <SelectValue />
+    </SelectTrigger>
+    <SelectContent
+      className="bg-white border border-slate-300 shadow-lg animate-fade-in"
+      style={{ zIndex: 30, animation: "fadeIn 0.2s ease" }}
+    >
+      <SelectItem className="cursor-pointer transition-colors duration-150 hover:bg-slate-100" value="rating">
+        Rating
+      </SelectItem>
+      <SelectItem className="cursor-pointer transition-colors duration-150 hover:bg-slate-100" value="name">
+        Name
+      </SelectItem>
+      <SelectItem className="cursor-pointer transition-colors duration-150 hover:bg-slate-100" value="location">
+        Location
+      </SelectItem>
+    </SelectContent>
+    <style>
+      {`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-8px);}
+          to { opacity: 1; transform: translateY(0);}
+        }
+      `}
+    </style>
+  </Select>
+</div>
+
           </div>
         </section>
 
