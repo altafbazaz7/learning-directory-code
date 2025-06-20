@@ -20,8 +20,7 @@ export function Header() {
                 </div>
                 <div>
 
-                  <h1 className="text-xl font-bold text-slate-900">Habot Connect</h1>
-                  <p className="text-xs text-slate-500">Learning Support Directory</p>
+                  <h1 className="text-xl font-bold text-slate-900">Lost App</h1>
                 </div>
               </div>
 
